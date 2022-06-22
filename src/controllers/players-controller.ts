@@ -1,11 +1,10 @@
 import {Handler} from 'express'
+import players from 'config/players'
 
-const index: Handler = (_, res) => {
-   res.status(200).json({
-        name: 'grandmasters',
-   })
+const all: Handler = (_, res) => {
+   res.status(200).json(players)
 }
 
 export {
-    index,
+    all,
 }

@@ -5,20 +5,27 @@
   "main": "server.js",
   "scripts": {
     "start": "node build/server.js",
-    "dev": "nodemon src/server.ts",
-    "build": "tsc"
+    "dev": "concurrently \"npm run build:watch\" \"nodemon build/server.js\"",
+    "build:watch": "babel src --out-dir build --extensions .ts --copy-files --watch",
+    "build:prod": "babel src --out-dir build --extensions .ts --copy-files --minified"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.18.5",
+    "@babel/preset-env": "^7.18.2",
+    "@babel/preset-typescript": "^7.17.12",
     "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.13",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "concurrently": "^7.2.2",
     "express": "^4.18.1",
     "nodemon": "^2.0.16",
-    "ts-node": "^10.8.1",
     "typescript": "^4.7.4"
   },
   "dependencies": {
+    "@babel/runtime": "^7.18.3",
     "chalk": "^4.1.2",
     "dotenv": "^16.0.1"
   }
