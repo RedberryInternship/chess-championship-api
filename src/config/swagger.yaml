@@ -1,8 +1,7 @@
 openapi: 3.0.0
 info:
-  title: NodeJS Project
-  description: Here goes description
-  version: 0.1.9
+  title: Chess Tournament API
+  version: 1
 
 servers:
   - url: http://localhost:4444/api
@@ -11,11 +10,13 @@ servers:
     description: production server
 
 paths:
-  /users:
+  /grandmasters:
     get:
+      tags:
+        - Services
       responses:
         '200':
-          description: Returns a list of users.
+          description: Get all the grandmasters
           content:
             application/json:
               schema:
@@ -23,13 +24,13 @@ paths:
                 items:
                   type: object
                   properties:
-                    firstName:
+                    name:
                       type: string
-                    lastName:
+                      required: true
+                    image:
                       type: string
-                    email:
-                      type: string
+                      required: true
                   example:
-                    firstName: gela
-                    lastName: iashvili
-                    email: gela@redberry.ge
+                    -
+                      name: Nona Gaphrindashvili
+                      image: /images/nona.jpg
