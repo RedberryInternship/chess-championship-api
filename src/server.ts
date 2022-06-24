@@ -8,7 +8,6 @@ import {indexController} from 'controllers'
 const server = express()
 
 server.use('/', express.static(join(__dirname, '../public')))
-
 server.get('/', indexController.index)
 server.use('/api', router)
 
