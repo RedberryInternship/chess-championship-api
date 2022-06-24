@@ -4,10 +4,10 @@ info:
   version: 1
 
 servers:
+  - url: https://chess-tournament-api.devtest.ge/api
+    description: production server
   - url: http://localhost:4444/api
     description: local server
-  - url: http://producation.app/api
-    description: production server
 
 paths:
   /grandmasters:
