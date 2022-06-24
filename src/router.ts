@@ -5,6 +5,7 @@ import path from "path"
 import swaggerUI, {SwaggerUiOptions} from 'swagger-ui-express'
 
 const swaggerDocument = YAML.load(path.join(__dirname, './config/swagger.yaml'))
+
 const options: SwaggerUiOptions = {
     customCss: '.swagger-ui .topbar { display: none }',
     customSiteTitle: 'Chess Tournament API',
