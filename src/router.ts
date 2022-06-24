@@ -1,6 +1,6 @@
-import express from "express"
-import {playersController, registerController} from 'controllers'
-import {swaggerMiddlewares} from 'middlewares'
+import express from 'express'
+import { playersController, registerController } from 'controllers'
+import { swaggerMiddlewares } from 'middlewares'
 
 const router = express.Router()
 

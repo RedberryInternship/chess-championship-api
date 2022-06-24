@@ -1,13 +1,8 @@
-import {Handler} from 'express'
+import { Handler } from 'express'
 
+const register: Handler = (_, res) =>
+  res.status(201).json({
+    success: true,
+  })
 
-const register: Handler = (_, res) => {
-   return res.status(201).json({
-       success:true,
-   })
-}
-
-
-export {
-    register,
-}
+export { register }
