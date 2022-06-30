@@ -4,10 +4,10 @@ info:
   version: 1
 
 servers:
-  - url: http://localhost:4444/api
-    description: local server
   - url: https://chess-tournament-api.devtest.ge/api
     description: production server
+  - url: http://localhost:4444/api
+    description: local server
 
 paths:
   /grandmasters:
@@ -49,8 +49,36 @@ paths:
                 name:
                   type: string
                   required: true
+                email:
+                  type: string
+                  required: true
+                phone:
+                  type: string
+                  required: true
+                date_of_birth:
+                  type: string
+                  required: true
+                experience_level:
+                  type: string
+                  required: true
+                  enum:
+                    - beginner
+                    - normal
+                    - professional
+                already_participated:
+                  type: boolean
+                  required: true
+                character_id:
+                  type: integer
+                  required: true
             example:
               name: Beth Harmon
+              email: beth@redberry.ge
+              phone: "598125819"
+              date_of_birth: '10/20/1997'
+              experience_level: beginner
+              already_participated: true
+              character_id: 2
       responses:
         '201':
           description: You have successfully registered!
