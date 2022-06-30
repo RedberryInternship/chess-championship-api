@@ -24,13 +24,35 @@ paths:
                 items:
                   type: object
                   properties:
+                    id:
+                      type: integer
                     name:
                       type: string
-                      required: true
                     image:
                       type: string
-                      required: true
                   example:
                     -
+                      id: 1
                       name: Nona Gaphrindashvili
                       image: /images/nona.jpg
+  /register:
+    post:
+      tags:
+        - Services
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  required: true
+            example:
+              name: Beth Harmon
+      responses:
+        '201':
+          description: You have successfully registered!
+          content:
+            application/json:
+              schema:
